@@ -4,26 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu primeiro programa</title>
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: rgb(0, 247, 255);
+            color: black;
+            font: normal 18pt arial
+        }
+    </style>
 </head>
 <body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usuar <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
     <script>
+        //5 métodos de acesso à arvore DOM
+        //por Marca
+        var p1 = window.document.getElementsByTagName('p')[1]
+        window.document.write('Está escito assim: ' + p1.innerHTML) //acrescentando texto no HTML via JS
+
+        //por ID
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green'
+
+        //por Nome
+        window.document.getElementsByName()
+
+        //por Classe
+        window.document.getElementsByClassName()
         
-        //Operadores LÓGICO
-        idade >= 15 && idade <= 17  //idade maior igual a 15 E idade menor igual a 17 // a idade está entre 15 e 17? 
-        estado =='RJ' || estado =='SP'  //estado igual a RJ ou estado igual SP // o estado é RJ ou SP?
-        salário > 1500 && sexo !='M' //salario maior que 1500 e sexo diferente de masculino // o salário é acimade 1.5k e não é homem?
-
-        //Operador TERNÁRIO
-        //teste ? true : false
-        var media = 5.5 //variavel média recebe 5.5
-        media > 7 ? 'APROVADO' : 'REPROVADO' //meia maior que 7? Se sim 'aprovado', se não 'reprovado'
-        media += 3 //media recebe media + 3
-
-        var idade = 19 //variavel idade recebe 19
-        var r = idade >= 18 ? 'MAIOR DE IDADE' : 'MENOR DE IDADE' //variavel r recebe = se idade >= 18 'MAIOR IDADE', se não 'MENOR IDADE'
+        //por Seletor
+        var d = window.document.querySelector('div#msg') //ID usa #, CLASS usa .
+        var d = window.document.querySelector('div.msg')
 
 
+
+
+
+        
     </script>
 </body>
 </html>
